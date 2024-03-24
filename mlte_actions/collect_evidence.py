@@ -1,7 +1,5 @@
 import pandas as pd
 from everything.db_ops import get_ratings_before_or_after_date_with_user_info
-from everything.db import UserMovieRating, User
-from everything.offline_eval import create_new_training_data
 from everything.svd_ratings_model import SVDRecommender
 from mlte_actions.evidence_measures import rmse_score_by_age_group, get_prediction_latencies, check_unknown_users_have_recs
 from spec_values.eval_metrics import MultipleRmse

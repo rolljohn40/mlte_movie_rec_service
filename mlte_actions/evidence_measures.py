@@ -31,6 +31,7 @@ def rmse_score_by_age_group(age_bins: List[int], test_data: pd.DataFrame, svd: S
         age_group_rmse.append(rmse)
     return age_group_rmse
 
+# function to check that recommender system provides recs for cold start (unknown users)
 def check_unknown_users_have_recs(unknown_users: List[int], svd: SVDRecommender):
     user_recs = []
     for userid in unknown_users:
@@ -38,6 +39,7 @@ def check_unknown_users_have_recs(unknown_users: List[int], svd: SVDRecommender)
         user_recs.append(rec)
     return user_recs
 
+# function to check inference time for rec system
 def get_prediction_latencies(test_userids: List[int], svd: SVDRecommender):
     latencies = []
     for userid in test_userids:
