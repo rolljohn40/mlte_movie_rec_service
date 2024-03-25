@@ -15,7 +15,6 @@ set_spec()
 evidence_pieces = get_evidence()
 # save evidence to context store
 for ev in evidence_pieces:
-    # print(ev)
     ev.save(force=True)
 
 # load the specification
@@ -31,4 +30,6 @@ validated_spec.save(force=True)
 
 # visualize results of specification valiidation
 validated_spec.print_results()
+
+## deploy model or refuse pending results
 

@@ -14,3 +14,5 @@ def set_context_and_store():
                 version_id="0.0.1")
     # Set the artifact storage path
     set_store(f"local://{store_path}")
+
+
