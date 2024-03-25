@@ -1,0 +1,22 @@
+{
+    "header": {
+        "identifier": "model size.value",
+        "type": "value",
+        "timestamp": 1711294753
+    },
+    "body": {
+        "artifact_type": "value",
+        "metadata": {
+            "measurement_type": "LocalObjectSize",
+            "identifier": {
+                "name": "model size"
+            },
+            "info": null
+        },
+        "value_class": "mlte.value.types.integer.Integer",
+        "value": {
+            "value_type": "integer",
+            "integer": 5028065
+        }
+    }
+}

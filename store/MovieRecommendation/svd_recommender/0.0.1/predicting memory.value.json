@@ -1,0 +1,26 @@
+{
+    "header": {
+        "identifier": "predicting memory.value",
+        "type": "value",
+        "timestamp": 1711294753
+    },
+    "body": {
+        "artifact_type": "value",
+        "metadata": {
+            "measurement_type": "LocalProcessMemoryConsumption",
+            "identifier": {
+                "name": "predicting memory"
+            },
+            "info": null
+        },
+        "value_class": "mlte.measurement.memory.local_process_memory_consumption.MemoryStatistics",
+        "value": {
+            "value_type": "opaque",
+            "data": {
+                "avg": 147079,
+                "min": 1632,
+                "max": 361820
+            }
+        }
+    }
+}

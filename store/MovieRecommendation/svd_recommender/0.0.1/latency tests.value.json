@@ -1,0 +1,32 @@
+{
+    "header": {
+        "identifier": "latency tests.value",
+        "type": "value",
+        "timestamp": 1711294753
+    },
+    "body": {
+        "artifact_type": "value",
+        "metadata": {
+            "measurement_type": "ExternalMeasurement",
+            "identifier": {
+                "name": "latency tests"
+            },
+            "info": "function: mlte_actions.evidence_measures.get_prediction_latencies"
+        },
+        "value_class": "spec_values.latency_metrics.MultipleLatency",
+        "value": {
+            "value_type": "array",
+            "data": [
+                0.004511117935180664,
+                0.0,
+                0.0,
+                0.018162965774536133,
+                0.003183126449584961,
+                0.0016474723815917969,
+                0.008523941040039062,
+                0.005252838134765625,
+                0.0034613609313964844
+            ]
+        }
+    }
+}

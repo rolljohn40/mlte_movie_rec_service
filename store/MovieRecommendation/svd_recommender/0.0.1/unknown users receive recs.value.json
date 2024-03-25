@@ -1,0 +1,26 @@
+{
+    "header": {
+        "identifier": "unknown users receive recs.value",
+        "type": "value",
+        "timestamp": 1711294753
+    },
+    "body": {
+        "artifact_type": "value",
+        "metadata": {
+            "measurement_type": "ExternalMeasurement",
+            "identifier": {
+                "name": "unknown users receive recs"
+            },
+            "info": "function: mlte_actions.evidence_measures.check_unknown_users_have_recs"
+        },
+        "value_class": "spec_values.robustness_metrics.UnknownUserRobustness",
+        "value": {
+            "value_type": "array",
+            "data": [
+                "striking+distance+1993,how+to+train+your+dragon+2010,shrek+2+2004,gone+girl+2014,the+english+patient+1996,star+wars+1977,dracula+untold+2014,flying+swords+of+dragon+gate+2011,kingdom+of+heaven+2005,hunger+2008",
+                "heartburn+1986,back+to+the+future+1985,once+upon+a+time+in+the+west+1968,sex+tape+2014,pocahontas+1995,once+upon+a+time+in+america+1984,high+noon+1952,the+avengers+2012,niagara+1953,cloud+atlas+2012",
+                "the+lion+king+1994,the+lord+of+the+rings+the+return+of+the+king+2003,total+recall+2012,the+girl+who+played+with+fire+2009,panic+room+2002,the+green+mile+1999,chitty+chitty+bang+bang+1968,treasure+planet+2002,meet+joe+black+1998,blown+away+1994"
+            ]
+        }
+    }
+}

@@ -1,0 +1,158 @@
+{
+    "header": {
+        "identifier": "default.validated_spec",
+        "type": "validated_spec",
+        "timestamp": 1711294753
+    },
+    "body": {
+        "artifact_type": "validated_spec",
+        "spec_identifier": "default.spec",
+        "properties": [
+            {
+                "name": "Fairness",
+                "description": "Fairness refers to the absence of biases in data and model inaccuracies that lead to models that treat individuals or groups unfavorably on the basis of inherent or acquired characteristics (such as race, gender, disabilities, or others). For ML models, this means ensuring similar model performance across specified subpopulations, groups, or data.",
+                "rationale": "Important check if model performs well accross different populations",
+                "conditions": {
+                    "rmse across age groups": {
+                        "name": "all_rmse_less_than",
+                        "arguments": [
+                            4.0
+                        ],
+                        "callback": "gASVyQQAAAAAAACMCmRpbGwuX2RpbGyUjBBfY3JlYXRlX2Z1bmN0aW9ulJOUKGgAjAxfY3JlYXRlX2NvZGWUk5QoQxAEAmz+DAEI/xADDAEY/w79lEsBSwBLAEsBSwZLE0PIlQGXAHQBAAAAAAAAAAAAAIgBZgFkAYQIfABqAQAAAAAAAAAARACmAAAAqwAAAAAAAAAAAKYBAACrAQAAAAAAAAAAdAUAAAAAAAAAAAAAfABqAQAAAAAAAAAApgEAAKsBAAAAAAAAAABrAgAAAAByEnQHAAAAAAAAAAAAAGQCiQGbAJ0CpgEAAKsBAAAAAAAAAABuGXQJAAAAAAAAAAAAAGQDiQGbAGQEfABqAQAAAAAAAAAAmwCdBKYBAACrAQAAAAAAAAAAUwCUKE5oBChDAJRLAUsASwBLAksDSzNDJJUBSwABAJcAfABdCn0BfAGJAmsBAAAAAFYAlwEBAIwLZABTAJROhZQpjAIuMJSMAWeUhpSMakM6XFVzZXJzXHJvbGxqXE9uZURyaXZlXERlc2t0b3BcQ01VXFNwcmluZyAyNFxNTHByb2RcaTNcbWx0ZV9tb3ZpZV9yZWNfc2VydmljZVxzcGVjX3ZhbHVlc1xldmFsX21ldHJpY3MucHmUjAk8Z2VuZXhwcj6UjFVNdWx0aXBsZVJtc2UuY2hlY2tfYWxsX3N1Yl9wb3Bfcm1zZV9ieV90aHJlc2hvbGQuPGxvY2Fscz4uPGxhbWJkYT4uPGxvY2Fscz4uPGdlbmV4cHI+lEsUQyf46ADoAIAA0BQ50BQ5qAGQUZgpkl7QFDnQFDnQFDnQFDnQFDnQFDmUaAeMCXRocmVzaG9sZJSFlCl0lFKUjC1BbGwgcm1zZSBhcmUgbGVzcyB0aGFuIG9yIGVxdWFsIHRvIHRocmVzaG9sZCCUjCVPbmUgb3IgbW9yZSBybXNlIGFyZSBhYm92ZSB0aHJlc2hvbGQglIwCOiCUdJQojANzdW2UjAVhcnJheZSMA2xlbpSMB1N1Y2Nlc3OUjAdGYWlsdXJllHSUjAV2YWx1ZZSFlGgNjAg8bGFtYmRhPpSMQk11bHRpcGxlUm1zZS5jaGVja19hbGxfc3ViX3BvcF9ybXNlX2J5X3RocmVzaG9sZC48bG9jYWxzPi48bGFtYmRhPpRLEkN/+IAA5REU0BQ50BQ50BQ50BQ5qFWsW9AUOdEUOdQUOdEROdQROb1TwBXEG9E9TdQ9TdIRTdARTfUFABsi2BBLwAnQEEvQEEvxAwIbDvQAAhsO8AACGw71BgASGdgQUrgJ0BBS0BBSwFXEW9AQUtAQUvEDAhIO9AACEg7wBwABAZRoB2gRhZQpdJRSlGNzcGVjX3ZhbHVlcy5ldmFsX21ldHJpY3MKX19kaWN0X18KaCFOaACMDF9jcmVhdGVfY2VsbJSTlE6FlFKUhZR0lFKUfZR9lCiMD19fYW5ub3RhdGlvbnNfX5R9lIwMX19xdWFsbmFtZV9flGgidYaUYowIYnVpbHRpbnOUjAdnZXRhdHRylJOUjARkaWxslIwFX2RpbGyUk5SMCF9zZXRhdHRylGg0jAdzZXRhdHRylJOUh5RSlGgqjA1jZWxsX2NvbnRlbnRzlEdAEAAAAAAAAIeUUjAu",
+                        "value_class": "mlte.value.artifact.Value"
+                    }
+                },
+                "module": "mlte.property.fairness.fairness",
+                "results": {
+                    "rmse across age groups": {
+                        "type": "Success",
+                        "message": "All rmse are less than or equal to threshold 4.0",
+                        "metadata": {
+                            "measurement_type": "ExternalMeasurement",
+                            "identifier": {
+                                "name": "rmse across age groups"
+                            },
+                            "info": "function: mlte_actions.evidence_measures.rmse_score_by_age_group"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "Robustness",
+                "description": "Robustness in general is the degree to which a system continues to function in the presence of invalid inputs or stressful environmental conditions. For ML models, this means checking that model performance does not deteriorate significantly in the presence of noise.",
+                "rationale": "Robust against unknown users",
+                "conditions": {
+                    "unknown users receive recs": {
+                        "name": "all_unknown_users_have_movie_recs",
+                        "arguments": [
+                            null
+                        ],
+                        "callback": "gASVMAQAAAAAAACMCmRpbGwuX2RpbGyUjBBfY3JlYXRlX2Z1bmN0aW9ulJOUKGgAjAxfY3JlYXRlX2NvZGWUk5QoQxACAmj+DAEC/xADDAEC/w79lEsBSwBLAEsBSwRLE0OmlwB0AQAAAAAAAAAAAABkAYQAfABqAQAAAAAAAAAARACmAAAAqwAAAAAAAAAAAKYBAACrAQAAAAAAAAAAdAUAAAAAAAAAAAAAfABqAQAAAAAAAAAApgEAAKsBAAAAAAAAAABrAgAAAAByD3QHAAAAAAAAAAAAAGQCpgEAAKsBAAAAAAAAAABuDnQJAAAAAAAAAAAAAGQDpgEAAKsBAAAAAAAAAABTAJQoTmgEKEMAlEsBSwBLAEsCSwNLM0MiSwABAJcAfABdCn0BfAFkAGsDAAAAAFYAlwEBAIwLZABTAJROhZQpjAIuMJSMAXKUhpSMcEM6XFVzZXJzXHJvbGxqXE9uZURyaXZlXERlc2t0b3BcQ01VXFNwcmluZyAyNFxNTHByb2RcaTNcbWx0ZV9tb3ZpZV9yZWNfc2VydmljZVxzcGVjX3ZhbHVlc1xyb2J1c3RuZXNzX21ldHJpY3MucHmUjAk8Z2VuZXhwcj6UjGlVbmtub3duVXNlclJvYnVzdG5lc3MuY2hlY2tfYWxsX3Vua25vd25fdXNlcmlkc19oYXZlX3JlY29tbWVuZGF0aW9ucy48bG9jYWxzPi48bGFtYmRhPi48bG9jYWxzPi48Z2VuZXhwcj6USxJDJugA6ACAANAUM9AUM6AxkFGYJJJZ0BQz0BQz0BQz0BQz0BQz0BQzlGgHKSl0lFKUjCpBbGwgdW5rbm93biB1c2VycyBoYXZlIG5vbiBudWxsIG1vdmllIHJlY3OUjDZPbmUgb3IgbW9yZSB1bmtub3duIHVzZXIgaWRzIGhhdmUgbnVsbCByZWNvbW1lbmRhdGlvbnOUdJQojANzdW2UjAVhcnJheZSMA2xlbpSMB1N1Y2Nlc3OUjAdGYWlsdXJllHSUjARyZWNzlIWUaA2MCDxsYW1iZGE+lIxWVW5rbm93blVzZXJSb2J1c3RuZXNzLmNoZWNrX2FsbF91bmtub3duX3VzZXJpZHNfaGF2ZV9yZWNvbW1lbmRhdGlvbnMuPGxvY2Fscz4uPGxhbWJkYT6USxBDXIAA5REU0BQz0BQzqASsCtAUM9EUM9QUM9ERM9QRM7VzuDS8OrF/tH/SEUbQEUb1BQAaIdgQPfEDAhoO9AACGg7wAAIaDvUGABIZ2BBJ8QMCEg70AAISDvAHAAEBlGgHKSl0lFKUY3NwZWNfdmFsdWVzLnJvYnVzdG5lc3NfbWV0cmljcwpfX2RpY3RfXwpoHk5OdJRSlH2UfZQojA9fX2Fubm90YXRpb25zX1+UfZSMDF9fcXVhbG5hbWVfX5RoH3WGlGIu",
+                        "value_class": "mlte.value.artifact.Value"
+                    }
+                },
+                "module": "mlte.property.robustness.robustness",
+                "results": {
+                    "unknown users receive recs": {
+                        "type": "Success",
+                        "message": "All unknown users have non null movie recs",
+                        "metadata": {
+                            "measurement_type": "ExternalMeasurement",
+                            "identifier": {
+                                "name": "unknown users receive recs"
+                            },
+                            "info": "function: mlte_actions.evidence_measures.check_unknown_users_have_recs"
+                        }
+                    }
+                }
+            },
+            {
+                "name": "StorageCost",
+                "description": "The StorageCost property assesses the storage requirements of a model. These requirements may be expressed in a variety of ways, including the physical size of the model when it is persisted to stable storage, or the number of parameters it contains.",
+                "rationale": "Critical since model will be in an embedded device",
+                "conditions": {
+                    "model size": {
+                        "name": "less_than",
+                        "arguments": [
+                            3000
+                        ],
+                        "callback": "gASVTAMAAAAAAACMCmRpbGwuX2RpbGyUjBBfY3JlYXRlX2Z1bmN0aW9ulJOUKGgAjAxfY3JlYXRlX2NvZGWUk5QoQxAEAxb9DAEY/xAEDAEY/w78lEsBSwBLAEsBSwZKEwAAAUOClQGXAHwAagAAAAAAAAAAAIkBawAAAAAAchp0AwAAAAAAAAAAAABkAXwAagAAAAAAAAAAAJsAZAKJAZsAnQSmAQAAqwEAAAAAAAAAAG4ZdAUAAAAAAAAAAAAAZAF8AGoAAAAAAAAAAACbAGQDiQGbAJ0EpgEAAKsBAAAAAAAAAABTAJQoTowSSW50ZWdlciBtYWduaXR1ZGUglIwVIGxlc3MgdGhhbiB0aHJlc2hvbGQglIwTIGV4Y2VlZHMgdGhyZXNob2xkIJR0lIwFdmFsdWWUjAdTdWNjZXNzlIwHRmFpbHVyZZSHlIwHaW50ZWdlcpSFlIyDYzpcVXNlcnNccm9sbGpcT25lRHJpdmVcRGVza3RvcFxDTVVcU3ByaW5nIDI0XE1McHJvZFxpM1xtbHRlX21vdmllX3JlY19zZXJ2aWNlXC5jb25kYVxMaWJcc2l0ZS1wYWNrYWdlc1xtbHRlXHZhbHVlXHR5cGVzXGludGVnZXIucHmUjAg8bGFtYmRhPpSMI0ludGVnZXIubGVzc190aGFuLjxsb2NhbHM+LjxsYW1iZGE+lEtkQ2T4gADwBgAQF4x9mHXSDyTQDyT1BwAdJNgQUKBXpF3QEFDQEFDIFdAQUNAQUPEDAh0O9AACHQ7wAAIdDvUIABIZ2BBOoFekXdAQTtAQTsB10BBO0BBO8QMCEg70AAISDvAJAAEBlEMAlGgLhZQpdJRSlGNtbHRlLnZhbHVlLnR5cGVzLmludGVnZXIKX19kaWN0X18KaBJOaACMDF9jcmVhdGVfY2VsbJSTlE6FlFKUhZR0lFKUfZR9lCiMD19fYW5ub3RhdGlvbnNfX5R9lIwMX19xdWFsbmFtZV9flGgTdYaUYowIYnVpbHRpbnOUjAdnZXRhdHRylJOUjARkaWxslIwFX2RpbGyUk5SMCF9zZXRhdHRylGgmjAdzZXRhdHRylJOUh5RSlGgcjA1jZWxsX2NvbnRlbnRzlE24C4eUUjAu",
+                        "value_class": "mlte.value.types.integer.Integer"
+                    }
+                },
+                "module": "mlte.property.costs.storage_cost",
+                "results": {
+                    "model size": {
+                        "type": "Failure",
+                        "message": "Integer magnitude 5028065 exceeds threshold 3000",
+                        "metadata": {
+                            "measurement_type": "LocalObjectSize",
+                            "identifier": {
+                                "name": "model size"
+                            },
+                            "info": null
+                        }
+                    }
+                }
+            },
+            {
+                "name": "PredictingMemoryCost",
+                "description": "The PredictingMemoryCost property assesses the memory requirements of model predicting. This might be measured by the memory requirements of property processes that run locally, or the cost of memory resources required for property processes that run on on-demand cloud infrastructure.",
+                "rationale": "Useful to evaluate resources needed when predicting",
+                "conditions": {
+                    "predicting memory": {
+                        "name": "average_consumption_less_than",
+                        "arguments": [
+                            512000.0
+                        ],
+                        "callback": "gASV0QMAAAAAAACMCmRpbGwuX2RpbGyUjBBfY3JlYXRlX2Z1bmN0aW9ulJOUKGgAjAxfY3JlYXRlX2NvZGWUk5QoQxgEBBb8DAESAQL/BP8QBQwCEgEC/wT+DvuUSwFLAEsASwFLBkoTAAABQ4KVAZcAfABqAAAAAAAAAAAAiQFrAQAAAAByGnQDAAAAAAAAAAAAAGQBfABqAAAAAAAAAAAAmwBkAokBmwCdBKYBAACrAQAAAAAAAAAAbhl0BQAAAAAAAAAAAABkAXwAagAAAAAAAAAAAJsAZAOJAZsAnQSmAQAAqwEAAAAAAAAAAFMAlChOjBRBdmVyYWdlIGNvbnN1bXB0aW9uIJSMESBiZWxvdyB0aHJlc2hvbGQglIwTIGV4Y2VlZHMgdGhyZXNob2xkIJR0lIwDYXZnlIwHU3VjY2Vzc5SMB0ZhaWx1cmWUh5SMBXN0YXRzlIWUjKNjOlxVc2Vyc1xyb2xsalxPbmVEcml2ZVxEZXNrdG9wXENNVVxTcHJpbmcgMjRcTUxwcm9kXGkzXG1sdGVfbW92aWVfcmVjX3NlcnZpY2VcLmNvbmRhXExpYlxzaXRlLXBhY2thZ2VzXG1sdGVcbWVhc3VyZW1lbnRcbWVtb3J5XGxvY2FsX3Byb2Nlc3NfbWVtb3J5X2NvbnN1bXB0aW9uLnB5lIwIPGxhbWJkYT6UjEBNZW1vcnlTdGF0aXN0aWNzLmF2ZXJhZ2VfY29uc3VtcHRpb25fbGVzc190aGFuLjxsb2NhbHM+LjxsYW1iZGE+lEuJQ3r4gADwCAAQFYx5mEnSDyXQDyX1CQAbIvACAREvoHWkefAAAREv8AABES/YIyzwAwERL/AAAREv8QMDGw70AAMbDvAAAxsO9QoAEhnwBAEVNag1rDnwAAEVNfAAARU12Cky8AMBFTXwAAEVNfEFBRIO9AAFEg7wCwABAZRDAJSMCXRocmVzaG9sZJSFlCl0lFKUY21sdGUubWVhc3VyZW1lbnQubWVtb3J5LmxvY2FsX3Byb2Nlc3NfbWVtb3J5X2NvbnN1bXB0aW9uCl9fZGljdF9fCmgSTmgAjAxfY3JlYXRlX2NlbGyUk5ROhZRSlIWUdJRSlH2UfZQojA9fX2Fubm90YXRpb25zX1+UfZSMDF9fcXVhbG5hbWVfX5RoE3WGlGKMCGJ1aWx0aW5zlIwHZ2V0YXR0cpSTlIwEZGlsbJSMBV9kaWxslJOUjAhfc2V0YXR0cpRoJ4wHc2V0YXR0cpSTlIeUUpRoHYwNY2VsbF9jb250ZW50c5RHQR9AAAAAAACHlFIwLg==",
+                        "value_class": "mlte.measurement.memory.local_process_memory_consumption.MemoryStatistics"
+                    }
+                },
+                "module": "mlte.property.costs.predicting_memory_cost",
+                "results": {
+                    "predicting memory": {
+                        "type": "Success",
+                        "message": "Average consumption 147079 below threshold 512000.0",
+                        "metadata": {
+                            "measurement_type": "LocalProcessMemoryConsumption",
+                            "identifier": {
+                                "name": "predicting memory"
+                            },
+                            "info": null
+                        }
+                    }
+                }
+            },
+            {
+                "name": "TaskEfficacy",
+                "description": "The TaskEfficacy property assesses a model's ability to correctly perform instances of its task. The means of measurement for this property will vary by both domain and task. Examples include accuracy, error rate, and average precision, but many others are possible.",
+                "rationale": "Inference time satisfies system requirements",
+                "conditions": {
+                    "latency tests": {
+                        "name": "all_latencies_less_than",
+                        "arguments": [
+                            150
+                        ],
+                        "callback": "gASVuAQAAAAAAACMCmRpbGwuX2RpbGyUjBBfY3JlYXRlX2Z1bmN0aW9ulJOUKGgAjAxfY3JlYXRlX2NvZGWUk5QoQxAEAmz+DAEI/xADDAEY/w79lEsBSwBLAEsBSwZLE0PIlQGXAHQBAAAAAAAAAAAAAIgBZgFkAYQIfABqAQAAAAAAAAAARACmAAAAqwAAAAAAAAAAAKYBAACrAQAAAAAAAAAAdAUAAAAAAAAAAAAAfABqAQAAAAAAAAAApgEAAKsBAAAAAAAAAABrAgAAAAByEnQHAAAAAAAAAAAAAGQCiQGbAJ0CpgEAAKsBAAAAAAAAAABuGXQJAAAAAAAAAAAAAGQDiQGbAGQEfABqAQAAAAAAAAAAmwCdBKYBAACrAQAAAAAAAAAAUwCUKE5oBChDAJRLAUsASwBLAksDSzNDJJUBSwABAJcAfABdCn0BfAGJAmsBAAAAAFYAlwEBAIwLZABTAJROhZQpjAIuMJSMAWeUhpSMbUM6XFVzZXJzXHJvbGxqXE9uZURyaXZlXERlc2t0b3BcQ01VXFNwcmluZyAyNFxNTHByb2RcaTNcbWx0ZV9tb3ZpZV9yZWNfc2VydmljZVxzcGVjX3ZhbHVlc1xsYXRlbmN5X21ldHJpY3MucHmUjAk8Z2VuZXhwcj6UjEhNdWx0aXBsZUxhdGVuY3kuY2hlY2tfYWxsX2xhdGVuY2llcy48bG9jYWxzPi48bGFtYmRhPi48bG9jYWxzPi48Z2VuZXhwcj6USxRDJ/joAOgAgADQFDnQFDmoAZBRmCmSXtAUOdAUOdAUOdAUOdAUOdAUOZRoB4wJdGhyZXNob2xklIWUKXSUUpSMMkFsbCBsYXRlbmNpZXMgYXJlIGxlc3MgdGhhbiBvciBlcXVhbCB0byB0aHJlc2hvbGQglIwqT25lIG9yIG1vcmUgbGF0ZW5jaWVzIGFyZSBhYm92ZSB0aHJlc2hvbGQglIwCOiCUdJQojANzdW2UjAVhcnJheZSMA2xlbpSMB1N1Y2Nlc3OUjAdGYWlsdXJllHSUjAV2YWx1ZZSFlGgNjAg8bGFtYmRhPpSMNU11bHRpcGxlTGF0ZW5jeS5jaGVja19hbGxfbGF0ZW5jaWVzLjxsb2NhbHM+LjxsYW1iZGE+lEsSQ3/4gADlERTQFDnQFDnQFDnQFDmoVaxb0BQ50RQ51BQ50RE51BE5vVPAFcQb0T1N1D1N0hFN0BFN9QUAGyLYEFDAWdAQUNAQUPEDAhsO9AACGw7wAAIbDvUGABIZ2BBXuFnQEFfQEFfIJcwr0BBX0BBX8QMCEg70AAISDvAHAAEBlGgHaBGFlCl0lFKUY3NwZWNfdmFsdWVzLmxhdGVuY3lfbWV0cmljcwpfX2RpY3RfXwpoIU5oAIwMX2NyZWF0ZV9jZWxslJOUToWUUpSFlHSUUpR9lH2UKIwPX19hbm5vdGF0aW9uc19flH2UjAxfX3F1YWxuYW1lX1+UaCJ1hpRijAhidWlsdGluc5SMB2dldGF0dHKUk5SMBGRpbGyUjAVfZGlsbJSTlIwIX3NldGF0dHKUaDSMB3NldGF0dHKUk5SHlFKUaCqMDWNlbGxfY29udGVudHOUS5aHlFIwLg==",
+                        "value_class": "mlte.value.artifact.Value"
+                    }
+                },
+                "module": "mlte.property.functionality.task_efficacy",
+                "results": {
+                    "latency tests": {
+                        "type": "Success",
+                        "message": "All latencies are less than or equal to threshold 150",
+                        "metadata": {
+                            "measurement_type": "ExternalMeasurement",
+                            "identifier": {
+                                "name": "latency tests"
+                            },
+                            "info": "function: mlte_actions.evidence_measures.get_prediction_latencies"
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

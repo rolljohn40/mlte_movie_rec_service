@@ -1,0 +1,26 @@
+{
+    "header": {
+        "identifier": "rmse across age groups.value",
+        "type": "value",
+        "timestamp": 1711294753
+    },
+    "body": {
+        "artifact_type": "value",
+        "metadata": {
+            "measurement_type": "ExternalMeasurement",
+            "identifier": {
+                "name": "rmse across age groups"
+            },
+            "info": "function: mlte_actions.evidence_measures.rmse_score_by_age_group"
+        },
+        "value_class": "spec_values.eval_metrics.MultipleRmse",
+        "value": {
+            "value_type": "array",
+            "data": [
+                3.6332103785708143,
+                3.998705444834402,
+                2.9998094231417394
+            ]
+        }
+    }
+}
